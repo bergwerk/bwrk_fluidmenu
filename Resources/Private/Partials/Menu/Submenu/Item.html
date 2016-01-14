@@ -1,0 +1,15 @@
+{namespace bwrk=BERGWERK\BwrkFluidmenu\ViewHelpers}
+
+<f:link.page pageUid="{page.uid}" class="{bwrk:isActive(number: '{page.uid}', array: '{activePages}')}">
+    <f:format.raw>{page.title}</f:format.raw>
+</f:link.page>
+
+<f:if condition="{page.hasSubpages}">
+    <ul>
+        <f:for each="{page.subPages}" as="subPage">
+            <bwrk:increment number="{layer}" step="1" as="layerIncrement">
+                <f:render partial="Menu/Wrapper" arguments="{page:subPage, layer:layerIncrement, menuType:menuType, activePages: activePages}"/>
+            </bwrk:increment>
+        </f:for>
+    </ul>
+</f:if>

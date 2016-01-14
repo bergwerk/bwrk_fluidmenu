@@ -1,0 +1,14 @@
+plugin.tx_bwrkfluidmenu {
+	view {
+		templateRootPath = EXT:bwrk_fluidmenu/Resources/Private/Templates/
+		layoutRootPath = EXT:bwrk_fluidmenu/Resources/Private/Layouts/
+		partialRootPath = EXT:bwrk_fluidmenu/Resources/Private/Partials/
+	}
+	settings {
+		rootPageId = 1
+		pagesToExclude =
+	}
+}
+
+page = PAGE
+page.includeCSS.10_fluidmenu = EXT:bwrk_fluidmenu/Resources/Public/css/main.css

@@ -1,0 +1,22 @@
+{namespace bwrk=BERGWERK\BwrkFluidmenu\ViewHelpers}
+
+<f:link.page pageUid="{page.uid}">
+    <f:format.raw>{page.title}</f:format.raw>
+    <f:if condition="{page.hasSubpages}">
+        <f:if condition="{layer} > 0">
+            <f:if condition="{menuType} == 'Default'">
+                <i class="fa fa-caret-right"></i>
+            </f:if>
+        </f:if>
+    </f:if>
+</f:link.page>
+
+<f:if condition="{page.hasSubpages}">
+    <ul class="dropdown-menu">
+        <f:for each="{page.subPages}" as="subPage">
+            <bwrk:increment number="{layer}" step="1" as="layerIncrement">
+                <f:render partial="Menu/Wrapper" arguments="{page:subPage, layer:layerIncrement, menuType:menuType, activePages: activePages}"/>
+            </bwrk:increment>
+        </f:for>
+    </ul>
+</f:if>
