@@ -29,7 +29,7 @@
 
 $EM_CONF[$_EXTKEY] = array(
     'title' => 'BERGWERK Fluid-Menu',
-    'description' => 'Renders menu in fluid.',
+    'description' => 'Render your Menu with Fluid instead of typoscript. It will give you a mass of performance!',
     'category' => 'plugin',
     'author' => 'BERGWERK[GD]',
     'author_email' => 'gd@bergwerk.ag',
@@ -44,7 +44,7 @@ $EM_CONF[$_EXTKEY] = array(
     'modify_tables' => '',
     'clearCacheOnLoad' => 0,
     'lockType' => '',
-    'version' => '2.1.1',
+    'version' => '2.1.2',
     'constraints' => array(
         'depends' => array(
             'typo3' => '6.2.0-7.6.99'
