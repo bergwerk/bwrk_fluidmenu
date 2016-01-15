@@ -3,9 +3,19 @@ plugin.tx_bwrkfluidmenu {
 		templateRootPath = EXT:bwrk_fluidmenu/Resources/Private/Templates/
 		layoutRootPath = EXT:bwrk_fluidmenu/Resources/Private/Layouts/
 		partialRootPath = EXT:bwrk_fluidmenu/Resources/Private/Partials/
+
+		templateRootPaths {
+			0 = EXT:bwrk_fluidmenu/Resources/Private/Templates/
+		}
+		layoutRootPaths {
+			0 = EXT:bwrk_fluidmenu/Resources/Private/Layouts/
+		}
+		partialRootPaths {
+			0 = EXT:bwrk_fluidmenu/Resources/Private/Partials/
+		}
 	}
 	settings {
-		rootPageId = 1
+		entryLevel =
 		pagesToExclude =
 	}
 }
