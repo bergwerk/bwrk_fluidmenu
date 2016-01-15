@@ -2,7 +2,6 @@
 *** 1. TypoScript Definition
 *****************************************************
 
-lib.menu_main >
 lib.menu_main = USER_INT
 lib.menu_main {
     userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
@@ -11,6 +10,15 @@ lib.menu_main {
     settings {
         // Posible Types: Default, Submenu, Mobile
         menuType = Default
+
+        // Depends on Rootpage e.g.
+        entryLevel =
+
+        // Comma seperated list of page uids
+        pagesToExclude =
+
+        // How much menu levels you want to display
+        showLevels =
     }
 }
 
@@ -20,18 +28,3 @@ lib.menu_main {
 *****************************************************
 
 <f:cObject typoscriptObjectPath="lib.menu_main" />
-
-
-*****************************************************
-*** 3. TypoScript Settings
-*****************************************************
-
-plugin.tx_bwrkfluidmenu {
-    settings {
-        // Depends on Rootpage e.g.
-        entryLevel =
-
-        // Comma seperated list of page uids
-        pagesToExclude =
-    }
-}

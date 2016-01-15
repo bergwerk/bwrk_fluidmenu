@@ -8,7 +8,7 @@
             <f:render partial="Before/Default" />
 
             <f:for each="{bwrk:page.menu(pId:pId)}" as="page">
-                <f:render partial="Menu/Wrapper" arguments="{page:page, layer:layer, menuType:menuType, activePages:activePages}" />
+                <f:render partial="Menu/Wrapper" arguments="{page:page, layer:layer, menuType:menuType, activePages:activePages, showLevels: showLevels}" />
             </f:for>
 
             <f:render partial="After/Default" />
@@ -22,7 +22,7 @@
             <f:render partial="Before/Mobile" />
 
             <f:for each="{bwrk:page.menu(pId:pId)}" as="page">
-                <f:render partial="Menu/Wrapper" arguments="{page:page, layer:layer, menuType:menuType, activePages:activePages}" />
+                <f:render partial="Menu/Wrapper" arguments="{page:page, layer:layer, menuType:menuType, activePages:activePages, showLevels: showLevels}" />
             </f:for>
 
             <f:render partial="After/Mobile" />
@@ -34,7 +34,7 @@
     <f:render partial="Before/Submenu" />
 
     <f:for each="{bwrk:page.menu(pId:pId)}" as="page" iteration="index">
-        <f:render partial="Menu/Wrapper" arguments="{page:page, layer:layer, menuType:menuType, activePages:activePages, index:index}" />
+        <f:render partial="Menu/Wrapper" arguments="{page:page, layer:layer, menuType:menuType, activePages:activePages, index:index, showLevels: showLevels}" />
     </f:for>
 
     <f:render partial="After/Submenu" />

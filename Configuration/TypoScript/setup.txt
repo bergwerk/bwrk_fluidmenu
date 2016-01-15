@@ -17,6 +17,8 @@ plugin.tx_bwrkfluidmenu {
 	settings {
 		entryLevel =
 		pagesToExclude =
+		menuType =
+		showLevels =
 	}
 }
 

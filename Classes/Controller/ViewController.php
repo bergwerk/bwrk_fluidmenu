@@ -31,6 +31,7 @@ namespace BERGWERK\BwrkFluidmenu\Controller;
 
 use BERGWERK\BwrkFluidmenu\Domain\Model\Page;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
+use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 
 /**
  * Class ViewController
@@ -75,6 +76,10 @@ class ViewController extends ActionController
      */
     protected $entryLevel = 0;
 
+    /**
+     * @var int
+     */
+    protected $showLevels = 0;
 
     /**
      * Initialize Actions
@@ -86,6 +91,7 @@ class ViewController extends ActionController
         $this->pid = $GLOBALS['TSFE']->id;
         $this->menuType = isset($this->settings['menuType']) ? $this->settings['menuType'] : 'Default';
 
+        $this->showLevels = isset($this->settings['showLevels']) && !empty($this->settings['showLevels']) ? $this->settings['showLevels'] : 50;
         $this->entryLevel = $this->settings['entryLevel'];
         $this->pagesToExclude = $this->settings['pagesToExclude'];
         $this->rootPageId = $this->getRecursiveRootpageId($this->pid);
@@ -110,7 +116,8 @@ class ViewController extends ActionController
                     'pId' => $rootPageId,
                     'layer' => 0,
                     'menuType' => $this->menuType,
-                    'activePages' => $activePages
+                    'activePages' => $activePages,
+                    'showLevels' => ($this->showLevels - 1)
                 )
             );
 
@@ -137,6 +144,7 @@ class ViewController extends ActionController
                 $array[] = $page['uid'];
             }
         }
+
         return $array;
     }
 
