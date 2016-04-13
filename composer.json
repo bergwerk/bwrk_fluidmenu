@@ -1,0 +1,10 @@
+{
+  "name": "bergwerk/bwrk-cache-fluidmenu",
+  "type": "typo3-cms-extension",
+  "description": "Renders TYPO3 with fluid",
+  "homepage": "https://www.bergwerk.ag/",
+  "license": ["GPL-2.0+"],
+  "keywords": ["TYPO3 CMS", "menu", "fluid"],
+  "version": "2.2.2",
+  "minimum-stability":"stable"
+}
