@@ -5,7 +5,7 @@ Extension-Key: bwrk_fluidmenu
 
 ### Installation
 
-1. Add TypoScript
+Add this TS Snippet to your Project. `menu_main` is a placeholder, you can rename it.
 
 ```
 lib.menu_main = USER_INT
@@ -30,7 +30,7 @@ lib.menu_main {
 }
 ``` 
 
-2. Add this to your Fluid Template
+Add this to your Fluid Template
 
 `<f:cObject typoscriptObjectPath="lib.menu_main" />` 
 
