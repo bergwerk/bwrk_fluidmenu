@@ -12,7 +12,7 @@
 
 <f:section name="Mobile">
     <f:if condition="{layer} <= {showLevels}">
-        <li class="{f:if(condition: page.hasSubpages, then: '{f:if(condition: \'{layer} > 0\', then: \'dropdown-submenu\', else: \'dropdown\')}')} item{page.uid}">
+        <li class="{f:if(condition: page.hasSubpages, then: '{f:if(condition: \'{layer} > 0\', then: \'dropdown-submenu\', else: \'dropdown\')}')} item{page.uid} {bwrk:isActive(number: '{page.uid}', array: '{activePages}')}">
             <f:if condition="{page.hasSubpages}">
                 <span class="icon icon-caret-down dropdown-toggle" data-toggle="dropdown"></span>
             </f:if>
@@ -23,7 +23,7 @@
 
 <f:section name="Submenu">
     <f:if condition="{layer} <= {showLevels}">
-        <li class="{f:if(condition: index.isFirst, then: 'first')}{f:if(condition: index.isLast, then: 'last')}">
+        <li class="{f:if(condition: index.isFirst, then: 'first')}{f:if(condition: index.isLast, then: 'last')} {bwrk:isActive(number: '{page.uid}', array: '{activePages}')}">
             <f:render partial="Menu/Submenu/Item" arguments="{page: page, layer: layer, menuType:menuType, activePages: activePages, index:index, showLevels:showLevels}" />
         </li>
     </f:if>
