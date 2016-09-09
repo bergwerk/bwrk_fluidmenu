@@ -31,7 +31,6 @@ namespace BERGWERK\BwrkFluidmenu\Controller;
 
 use BERGWERK\BwrkFluidmenu\Domain\Model\Page;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
-use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 
 /**
  * Class ViewController
@@ -45,7 +44,7 @@ class ViewController extends ActionController
     protected $rootPageId = 0;
 
     /**
-     * @var \BERGWERK\BwrkFluidmenu\Utility\CacheUtility
+     * @var \BERGWERK\BwrkUtility\Utility\CacheUtility
      * @inject
      */
     protected $cacheUtility;
@@ -104,8 +103,9 @@ class ViewController extends ActionController
     public function indexAction()
     {
         $cacheIdentifier = $this->getCacheIdentifier();
+        $this->cacheUtility->setCacheIdentifier($cacheIdentifier);
 
-        $html = $this->cacheUtility->getCache($cacheIdentifier);
+        $html = $this->cacheUtility->getCache();
         if(!$html)
         {
             $activePages = $this->getActivePages();
@@ -123,7 +123,7 @@ class ViewController extends ActionController
 
             $html = $this->view->render();
 
-            $this->cacheUtility->setCache($html, $cacheIdentifier);
+            $this->cacheUtility->setCache($html);
         }
 
         return $html;
