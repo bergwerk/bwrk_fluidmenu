@@ -32,6 +32,7 @@ namespace BERGWERK\BwrkFluidmenu\Controller;
 use BERGWERK\BwrkFluidmenu\Domain\Model\Page;
 use BERGWERK\BwrkUtility\Utility\CacheUtility;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
+use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 
 /**
  * Class ViewController
@@ -119,7 +120,8 @@ class ViewController extends ActionController
                     'layer' => 0,
                     'menuType' => $this->menuType,
                     'activePages' => $activePages,
-                    'showLevels' => ($this->showLevels - 1)
+                    'showLevels' => ($this->showLevels - 1),
+                    'pagesToExclude' => $this->settings['pagesToExclude']
                 )
             );
 

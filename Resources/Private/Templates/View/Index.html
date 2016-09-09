@@ -7,7 +7,7 @@
         <ul class="nav navbar-nav">
             <f:render partial="Before/Default" />
 
-            <f:for each="{bwrk:page.menu(pId:pId)}" as="page">
+            <f:for each="{bwrk:page.menu(pId:pId, pagesToExclude: pagesToExclude)}" as="page">
                 <f:render partial="Menu/Wrapper" arguments="{page:page, layer:layer, menuType:menuType, activePages:activePages, showLevels: showLevels}" />
             </f:for>
 
@@ -21,7 +21,7 @@
         <ul class="nav">
             <f:render partial="Before/Mobile" />
 
-            <f:for each="{bwrk:page.menu(pId:pId)}" as="page">
+            <f:for each="{bwrk:page.menu(pId:pId, pagesToExclude: pagesToExclude)}" as="page">
                 <f:render partial="Menu/Wrapper" arguments="{page:page, layer:layer, menuType:menuType, activePages:activePages, showLevels: showLevels}" />
             </f:for>
 
@@ -33,7 +33,7 @@
 <f:section name="Submenu">
     <f:render partial="Before/Submenu" />
 
-    <f:for each="{bwrk:page.menu(pId:pId)}" as="page" iteration="index">
+    <f:for each="{bwrk:page.menu(pId:pId, pagesToExclude: pagesToExclude)}" as="page" iteration="index">
         <f:render partial="Menu/Wrapper" arguments="{page:page, layer:layer, menuType:menuType, activePages:activePages, index:index, showLevels: showLevels}" />
     </f:for>
 

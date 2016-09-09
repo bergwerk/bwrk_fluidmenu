@@ -28,13 +28,15 @@ namespace BERGWERK\BwrkFluidmenu\ViewHelpers\Page;
  * @subpackage	bwrk_fluidmenu
  ***************************************************************/
 
+use BERGWERK\BwrkFluidmenu\Domain\Model\Page;
 use BERGWERK\BwrkFluidmenu\Domain\Repository\PageRepository;
+use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 /**
  * Class MenuViewHelper
  * @package BERGWERK\BwrkFluidmenu\ViewHelpers\Page
  */
-class MenuViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+class MenuViewHelper extends AbstractViewHelper {
 
     /**
      * @var \TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface
@@ -49,10 +51,22 @@ class MenuViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper
 
     /**
      * @param int $pId
+     * @param string $pagesToExclude
      * @return string
      */
-    public function render($pId)
+    public function render($pId, $pagesToExclude)
     {
-        return PageRepository::create()->findPagesByPid($pId);
+        $pagesToExclude = array_map('trim', explode(',', $pagesToExclude));
+        $pagesToReturn = array();
+        /** @var Page[] $pages */
+        $pages = PageRepository::create()->findPagesByPid($pId);
+        foreach($pages as $page)
+        {
+            if(!in_array($page->getUid(), $pagesToExclude))
+            {
+                $pagesToReturn[] = $page;
+            }
+        }
+        return $pagesToReturn;
     }
 }
