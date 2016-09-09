@@ -30,6 +30,7 @@ namespace BERGWERK\BwrkFluidmenu\Controller;
  ***************************************************************/
 
 use BERGWERK\BwrkFluidmenu\Domain\Model\Page;
+use BERGWERK\BwrkUtility\Utility\CacheUtility;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 /**
@@ -45,7 +46,6 @@ class ViewController extends ActionController
 
     /**
      * @var \BERGWERK\BwrkUtility\Utility\CacheUtility
-     * @inject
      */
     protected $cacheUtility;
 
@@ -86,6 +86,8 @@ class ViewController extends ActionController
     protected function initializeAction()
     {
         parent::initializeAction();
+
+        $this->cacheUtility = new CacheUtility('bwrk_fluidmenu');
 
         $this->pid = $GLOBALS['TSFE']->id;
         $this->menuType = isset($this->settings['menuType']) ? $this->settings['menuType'] : 'Default';
