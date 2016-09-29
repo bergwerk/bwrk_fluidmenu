@@ -58,6 +58,11 @@ class Page extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $isSiteroot = 0;
 
     /**
+     * @var string
+     */
+    protected $target = '';
+
+    /**
      * @return string
      */
     public function getTitle()
@@ -121,4 +126,11 @@ class Page extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
         return $this->isSiteroot;
     }
 
+    /**
+     * @return string
+     */
+    public function getTarget()
+    {
+        return $this->target;
+    }
 }

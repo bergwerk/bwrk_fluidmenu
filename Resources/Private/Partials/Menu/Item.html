@@ -1,6 +1,6 @@
 {namespace bwrk=BERGWERK\BwrkFluidmenu\ViewHelpers}
 
-<f:link.page pageUid="{page.uid}">
+<f:link.page pageUid="{page.uid}" target="{page.target}">
     <f:format.raw>{page.title}</f:format.raw>
     <f:if condition="{page.hasSubpages}">
         <f:if condition="{layer} > 0">
