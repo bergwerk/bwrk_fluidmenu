@@ -9,6 +9,12 @@
       "email": "typo3@bergwerk.ag"
     }
   ],
+  "repositories": [
+    {
+      "url": "https://github.com/bergwerk/bwrk_utility.git",
+      "type": "git"
+    }
+  ],
   "type": "typo3-cms-extension",
   "version": "3.0.0",
   "license": ["GPL-2.0+"],
