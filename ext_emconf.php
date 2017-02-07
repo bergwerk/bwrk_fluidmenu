@@ -44,11 +44,11 @@ $EM_CONF[$_EXTKEY] = array(
     'modify_tables' => '',
     'clearCacheOnLoad' => 0,
     'lockType' => '',
-    'version' => '2.3.3',
+    'version' => '3.0.0',
     'constraints' => array(
         'depends' => array(
-            'typo3' => '6.2.0-7.6.99',
-            'bwrk_utility' => '2.0.2-2.9.99'
+            'typo3' => '6.2.0-8.7.99',
+            'bwrk_utility' => '3.0.0-3.9.99'
         ),
         'conflicts' => array(),
         'suggests' => array(),

@@ -1,10 +1,37 @@
 {
-  "name": "bergwerk/bwrk-cache-fluidmenu",
-  "type": "typo3-cms-extension",
-  "description": "Renders TYPO3 with fluid",
-  "homepage": "https://www.bergwerk.ag/",
-  "license": ["GPL-2.0+"],
+  "name": "bergwerk/bwrk_fluidmenu",
+  "description": "Renders TYPO3 Menu with fluid",
+  "homepage": "www.bergwerk.ag",
   "keywords": ["TYPO3 CMS", "menu", "fluid"],
-  "version": "2.2.2",
-  "minimum-stability":"stable"
+  "authors": [
+    {
+      "name": "Georg Dümmler",
+      "email": "typo3@bergwerk.ag"
+    }
+  ],
+  "type": "typo3-cms-extension",
+  "version": "3.0.0",
+  "license": ["GPL-2.0+"],
+  "require": {
+    "typo3/cms-core": ">7.6",
+    "typo3-ter/bwrk_utility": ">3.0"
+  },
+  "replace": {
+    "bwrk_fluidmenu": "self.version",
+    "typo3-ter/bwrk_fluidmenu": "self.version"
+  },
+  "autoload": {
+    "psr-4": {
+      "BERGWERK\\BwrkFluidmenu\\": "Classes"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "3.x-dev"
+    },
+    "typo3/cms": {
+      "cms-package-dir": "{$vendor-dir}/typo3/cms",
+      "web-dir": ".Build/Web"
+    }
+  }
 }
