@@ -1,26 +1,20 @@
 {
   "name": "bergwerk/bwrk_fluidmenu",
   "description": "Renders TYPO3 Menu with fluid",
-  "homepage": "www.bergwerk.ag",
-  "keywords": ["TYPO3 CMS", "menu", "fluid"],
-  "authors": [
-    {
-      "name": "Georg Dümmler",
-      "email": "typo3@bergwerk.ag"
-    }
-  ],
-  "repositories": [
-    {
-      "url": "https://github.com/bergwerk/bwrk_utility.git",
-      "type": "git"
-    }
-  ],
+  "version": "2.2.3",
   "type": "typo3-cms-extension",
-  "version": "3.0.0",
-  "license": ["GPL-2.0+"],
+  "homepage": "https://www.bergwerk.ag",
+  "authors": [
+      {
+          "name": "BERGWERK",
+          "role": "Developer",
+          "homepage": "https://www.bergwerk.ag"
+      }
+  ],
+  "license": ["GPL-2.0-or-later"],
   "require": {
     "typo3/cms-core": ">7.6",
-    "bergwerk/bwrk_utility": "dev-master#3.0.0"
+    "bergwerk/bwrk_utility": "~2.0.0"
   },
   "replace": {
     "bwrk_fluidmenu": "self.version",
@@ -39,5 +33,5 @@
       "cms-package-dir": "{$vendor-dir}/typo3/cms",
       "web-dir": ".Build/Web"
     }
-  }
+  }  
 }
